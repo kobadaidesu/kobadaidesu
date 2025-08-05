@@ -23,7 +23,7 @@ Here are some ideas to get you started:
 </p>
 
 <!-- Github Profile Trophy -->
-[![trophy](https://github-profile-trophy.vercel.app/?username=kobadaidesu&theme=onedark&column=7)](https://github.com/ryo-ma/github-profile-trophy)
+## [![trophy](https://github-profile-trophy.vercel.app/?username=kobadaidesu&theme=onedark&column=7)](https://github.com/ryo-ma/github-profile-trophy)
 
 <!-- GitHub Profile Summary Cards -->
 [![](https://raw.githubusercontent.com/kobadaidesu/kobadaidesu/main/profile-summary-card-output/city_lights/0-profile-details.svg)](https://github.com/vn7n24fzkq/github-profile-summary-cards)
