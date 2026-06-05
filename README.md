@@ -22,7 +22,7 @@
 ## Language Mix
 
 <p align="center">
-  <img alt="Language mix chart" src="./assets/language-mix.svg" />
+  <img alt="Language mix pie chart" src="./assets/language-pie.svg" />
 </p>
 
 | Language | Share |
@@ -34,7 +34,7 @@
 | C | 0.9% |
 | TypeScript | 0.8% |
 | Assembly | 0.7% |
-| JavaScript + Other | 0.9% |
+| JavaScript + Other | 0.8% |
 
 Snapshot from public, non-fork repositories using GitHub Linguist byte counts on 2026-06-06.
 
