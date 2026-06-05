@@ -25,18 +25,19 @@
   <img alt="Language mix pie chart" src="./assets/language-pie.svg" />
 </p>
 
-| Language | Share |
-| --- | ---: |
-| Jupyter Notebook | 79.9% |
-| Python | 13.1% |
-| C++ | 4.0% |
-| HTML | 0.7% |
-| C | 0.7% |
-| TypeScript | 0.5% |
-| Assembly | 0.5% |
-| JavaScript + Other | 0.6% |
+| Language | Files | Share |
+| --- | ---: | ---: |
+| C | 106 | 24.9% |
+| Jupyter Notebook | 97 | 22.8% |
+| TypeScript | 73 | 17.2% |
+| HTML | 43 | 10.1% |
+| Python | 41 | 9.6% |
+| CSS | 11 | 2.6% |
+| JavaScript | 9 | 2.1% |
+| Assembly | 9 | 2.1% |
+| Other | 36 | 8.5% |
 
-Snapshot from public repositories, forks included, using GitHub Linguist byte counts on 2026-06-06.
+Snapshot from public repositories, forks included, using extension-based file counts on 2026-06-06. Non-code assets and docs are not counted.
 
 ## Current Direction
 
