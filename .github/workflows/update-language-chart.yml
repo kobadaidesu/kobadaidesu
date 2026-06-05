@@ -1,0 +1,39 @@
+name: Update Language Chart
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-language-chart:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate language chart
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: kobadaidesu
+        run: node scripts/update-language-chart.mjs
+
+      - name: Commit chart update
+        run: |
+          if git diff --quiet -- assets/language-pie.svg; then
+            echo "No language chart changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/language-pie.svg
+          git commit -m "Update language chart"
+          git push
