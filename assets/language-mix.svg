@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="390" viewBox="0 0 760 390" role="img" aria-labelledby="title desc">
+  <title id="title">kobadaidesu public repository language mix</title>
+  <desc id="desc">A static language percentage chart generated from GitHub Linguist data for public non-fork repositories.</desc>
+  <rect width="760" height="390" rx="16" fill="#0d1117"/>
+  <text x="32" y="46" fill="#f0f6fc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Language Mix</text>
+  <text x="32" y="74" fill="#8b949e" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">Public non-fork repositories, GitHub Linguist bytes, snapshot: 2026-06-06</text>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="14">
+    <text x="32" y="120" fill="#c9d1d9">Jupyter Notebook</text>
+    <rect x="190" y="105" width="376" height="18" rx="9" fill="#da5b0b"/>
+    <text x="584" y="120" fill="#f0f6fc" font-weight="600">72.4%</text>
+
+    <text x="32" y="154" fill="#c9d1d9">Python</text>
+    <rect x="190" y="139" width="94" height="18" rx="9" fill="#3572A5"/>
+    <text x="584" y="154" fill="#f0f6fc" font-weight="600">18.0%</text>
+
+    <text x="32" y="188" fill="#c9d1d9">C++</text>
+    <rect x="190" y="173" width="29" height="18" rx="9" fill="#f34b7d"/>
+    <text x="584" y="188" fill="#f0f6fc" font-weight="600">5.6%</text>
+
+    <text x="32" y="222" fill="#c9d1d9">HTML</text>
+    <rect x="190" y="207" width="5" height="18" rx="2" fill="#e34c26"/>
+    <text x="584" y="222" fill="#f0f6fc" font-weight="600">0.9%</text>
+
+    <text x="32" y="256" fill="#c9d1d9">C</text>
+    <rect x="190" y="241" width="5" height="18" rx="2" fill="#555555"/>
+    <text x="584" y="256" fill="#f0f6fc" font-weight="600">0.9%</text>
+
+    <text x="32" y="290" fill="#c9d1d9">TypeScript</text>
+    <rect x="190" y="275" width="4" height="18" rx="2" fill="#3178c6"/>
+    <text x="584" y="290" fill="#f0f6fc" font-weight="600">0.8%</text>
+
+    <text x="32" y="324" fill="#c9d1d9">Assembly</text>
+    <rect x="190" y="309" width="4" height="18" rx="2" fill="#6E4C13"/>
+    <text x="584" y="324" fill="#f0f6fc" font-weight="600">0.7%</text>
+
+    <text x="32" y="358" fill="#c9d1d9">JavaScript + Other</text>
+    <rect x="190" y="343" width="5" height="18" rx="2" fill="#f1e05a"/>
+    <text x="584" y="358" fill="#f0f6fc" font-weight="600">0.9%</text>
+  </g>
+</svg>
