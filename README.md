@@ -27,16 +27,16 @@
 
 | Language | Share |
 | --- | ---: |
-| Jupyter Notebook | 72.4% |
-| Python | 18.0% |
-| C++ | 5.6% |
-| HTML | 0.9% |
-| C | 0.9% |
-| TypeScript | 0.8% |
-| Assembly | 0.7% |
-| JavaScript + Other | 0.8% |
+| Jupyter Notebook | 79.9% |
+| Python | 13.1% |
+| C++ | 4.0% |
+| HTML | 0.7% |
+| C | 0.7% |
+| TypeScript | 0.5% |
+| Assembly | 0.5% |
+| JavaScript + Other | 0.6% |
 
-Snapshot from public, non-fork repositories using GitHub Linguist byte counts on 2026-06-06.
+Snapshot from public repositories, forks included, using GitHub Linguist byte counts on 2026-06-06.
 
 ## Current Direction
 
