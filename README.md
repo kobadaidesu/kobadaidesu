@@ -22,30 +22,24 @@
 ## Language Mix
 
 <p align="center">
-  <img alt="Top languages" height="190" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kobadaidesu&layout=donut&langs_count=8&theme=github_dark&hide_border=true" />
-  <img alt="GitHub stats" height="190" src="https://github-readme-stats.vercel.app/api?username=kobadaidesu&show_icons=true&theme=github_dark&hide_border=true" />
+  <img alt="Language mix chart" src="./assets/language-mix.svg" />
 </p>
 
-## Profile Summary
+| Language | Share |
+| --- | ---: |
+| Jupyter Notebook | 72.4% |
+| Python | 18.0% |
+| C++ | 5.6% |
+| HTML | 0.9% |
+| C | 0.9% |
+| TypeScript | 0.8% |
+| Assembly | 0.7% |
+| JavaScript + Other | 0.9% |
 
-<p align="center">
-  <img alt="Profile details" src="https://raw.githubusercontent.com/kobadaidesu/kobadaidesu/main/profile-summary-card-output/city_lights/0-profile-details.svg" />
-</p>
+Snapshot from public, non-fork repositories using GitHub Linguist byte counts on 2026-06-06.
 
-<p align="center">
-  <img alt="Repos per language" src="https://raw.githubusercontent.com/kobadaidesu/kobadaidesu/main/profile-summary-card-output/city_lights/1-repos-per-language.svg" />
-  <img alt="Most commit language" src="https://raw.githubusercontent.com/kobadaidesu/kobadaidesu/main/profile-summary-card-output/city_lights/2-most-commit-language.svg" />
-</p>
+## Current Direction
 
-<p align="center">
-  <img alt="Stats" src="https://raw.githubusercontent.com/kobadaidesu/kobadaidesu/main/profile-summary-card-output/city_lights/3-stats.svg" />
-  <img alt="Productive time" src="https://raw.githubusercontent.com/kobadaidesu/kobadaidesu/main/profile-summary-card-output/city_lights/4-productive-time.svg" />
-</p>
-
-## Trophy
-
-<p align="center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img alt="GitHub profile trophy" src="https://github-profile-trophy.vercel.app/?username=kobadaidesu&theme=onedark&column=7&no-frame=true&no-bg=true" />
-  </a>
-</p>
+- C projects at 42 Tokyo
+- Unix-like tooling and CLI programs
+- Practical experiments with Python, TypeScript, and small web apps
