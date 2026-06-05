@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
   <title id="title">kobadaidesu public repository language pie chart</title>
-  <desc id="desc">A pie chart generated from GitHub Linguist byte counts for public non-fork repositories.</desc>
+  <desc id="desc">A pie chart generated from GitHub Linguist byte counts for public repositories, including forks.</desc>
   <rect width="760" height="430" rx="16" fill="#0d1117"/>
   <text x="32" y="46" fill="#f0f6fc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Language Mix</text>
-  <text x="32" y="74" fill="#8b949e" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">Public non-fork repositories, GitHub Linguist bytes, snapshot: 2026-06-06</text>
+  <text x="32" y="74" fill="#8b949e" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">Public repositories, forks included, GitHub Linguist bytes, snapshot: 2026-06-06</text>
 
   <g stroke="#0d1117" stroke-width="3" stroke-linejoin="round">
-    <path d="M 215 210 L 215.00 85.00 A 125 125 0 1 1 91.65 230.27 Z" fill="#da5b0b"/>
-    <path d="M 215 210 L 91.65 230.27 A 125 125 0 0 1 143.97 107.14 Z" fill="#3572A5"/>
-    <path d="M 215 210 L 143.97 107.14 A 125 125 0 0 1 183.40 89.06 Z" fill="#f34b7d"/>
-    <path d="M 215 210 L 183.40 89.06 A 125 125 0 0 1 190.42 87.44 Z" fill="#e34c26"/>
-    <path d="M 215 210 L 190.42 87.44 A 125 125 0 0 1 197.29 86.26 Z" fill="#555555"/>
-    <path d="M 215 210 L 197.29 86.26 A 125 125 0 0 1 203.18 85.56 Z" fill="#3178c6"/>
-    <path d="M 215 210 L 203.18 85.56 A 125 125 0 0 1 208.41 85.17 Z" fill="#6E4C13"/>
-    <path d="M 215 210 L 208.41 85.17 A 125 125 0 0 1 215.00 85.00 Z" fill="#f1e05a"/>
+    <path d="M 215 210 L 215.00 85.00 A 125 125 0 1 1 95.85 172.21 Z" fill="#da5b0b"/>
+    <path d="M 215 210 L 95.85 172.21 A 125 125 0 0 1 161.70 96.93 Z" fill="#3572A5"/>
+    <path d="M 215 210 L 161.70 96.93 A 125 125 0 0 1 191.76 87.18 Z" fill="#f34b7d"/>
+    <path d="M 215 210 L 191.76 87.18 A 125 125 0 0 1 196.93 86.31 Z" fill="#e34c26"/>
+    <path d="M 215 210 L 196.93 86.31 A 125 125 0 0 1 202.09 85.67 Z" fill="#555555"/>
+    <path d="M 215 210 L 202.09 85.67 A 125 125 0 0 1 206.38 85.30 Z" fill="#3178c6"/>
+    <path d="M 215 210 L 206.38 85.30 A 125 125 0 0 1 210.20 85.09 Z" fill="#6E4C13"/>
+    <path d="M 215 210 L 210.20 85.09 A 125 125 0 0 1 215.00 85.00 Z" fill="#f1e05a"/>
   </g>
 
   <circle cx="215" cy="210" r="48" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
@@ -24,42 +24,42 @@
     <g transform="translate(430 116)">
       <rect width="14" height="14" rx="3" fill="#da5b0b"/>
       <text x="24" y="13" fill="#c9d1d9">Jupyter Notebook</text>
-      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">72.4%</text>
+      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">79.9%</text>
     </g>
     <g transform="translate(430 152)">
       <rect width="14" height="14" rx="3" fill="#3572A5"/>
       <text x="24" y="13" fill="#c9d1d9">Python</text>
-      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">18.0%</text>
+      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">13.1%</text>
     </g>
     <g transform="translate(430 188)">
       <rect width="14" height="14" rx="3" fill="#f34b7d"/>
       <text x="24" y="13" fill="#c9d1d9">C++</text>
-      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">5.6%</text>
+      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">4.0%</text>
     </g>
     <g transform="translate(430 224)">
       <rect width="14" height="14" rx="3" fill="#e34c26"/>
       <text x="24" y="13" fill="#c9d1d9">HTML</text>
-      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">0.9%</text>
+      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">0.7%</text>
     </g>
     <g transform="translate(430 260)">
       <rect width="14" height="14" rx="3" fill="#555555"/>
       <text x="24" y="13" fill="#c9d1d9">C</text>
-      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">0.9%</text>
+      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">0.7%</text>
     </g>
     <g transform="translate(430 296)">
       <rect width="14" height="14" rx="3" fill="#3178c6"/>
       <text x="24" y="13" fill="#c9d1d9">TypeScript</text>
-      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">0.8%</text>
+      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">0.5%</text>
     </g>
     <g transform="translate(430 332)">
       <rect width="14" height="14" rx="3" fill="#6E4C13"/>
       <text x="24" y="13" fill="#c9d1d9">Assembly</text>
-      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">0.7%</text>
+      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">0.5%</text>
     </g>
     <g transform="translate(430 368)">
       <rect width="14" height="14" rx="3" fill="#f1e05a"/>
       <text x="24" y="13" fill="#c9d1d9">JavaScript + Other</text>
-      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">0.8%</text>
+      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">0.6%</text>
     </g>
   </g>
 </svg>
