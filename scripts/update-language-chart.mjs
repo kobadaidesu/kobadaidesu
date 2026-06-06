@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 
 const USERNAME = process.env.GITHUB_USERNAME || 'kobadaidesu';
-const OUTPUT = 'assets/language-pie.svg';
+const OUTPUT = 'assets/language-stats.svg';
 const MAX_LANGS = 8;
 
 const COLORS = {
@@ -87,6 +87,7 @@ async function githubJson(url) {
   if (process.env.GITHUB_TOKEN) {
     headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   }
+
   const response = await fetch(url, { headers });
   if (!response.ok) {
     throw new Error(`${response.status} ${response.statusText}: ${url}\n${await response.text()}`);
@@ -158,61 +159,73 @@ function escapeXml(value) {
     .replaceAll('"', '&quot;');
 }
 
-function polarPoint(cx, cy, r, degrees) {
-  const radians = (degrees * Math.PI) / 180;
-  return [cx + r * Math.cos(radians), cy + r * Math.sin(radians)];
-}
-
-function piePath(cx, cy, r, start, end) {
-  const [x1, y1] = polarPoint(cx, cy, r, start);
-  const [x2, y2] = polarPoint(cx, cy, r, end);
-  const largeArc = end - start > 180 ? 1 : 0;
-  return `M ${cx} ${cy} L ${x1.toFixed(2)} ${y1.toFixed(2)} A ${r} ${r} 0 ${largeArc} 1 ${x2.toFixed(2)} ${y2.toFixed(2)} Z`;
-}
-
-function buildChart(totals, countedFiles) {
+function buildRows(totals) {
   const sorted = [...totals.entries()].sort((a, b) => b[1] - a[1]);
   const top = sorted.slice(0, MAX_LANGS);
   const otherCount = sorted.slice(MAX_LANGS).reduce((sum, [, count]) => sum + count, 0);
-  const rows = otherCount > 0 ? [...top, ['Other', otherCount]] : top;
+  return otherCount > 0 ? [...top, ['Other', otherCount]] : top;
+}
+
+function buildBar(rows, countedFiles) {
+  const barX = 24;
+  const barY = 66;
+  const barWidth = 712;
+  const barHeight = 12;
+  let x = barX;
+
+  return rows.map(([language, count], index) => {
+    const width = index === rows.length - 1
+      ? barX + barWidth - x
+      : (count / countedFiles) * barWidth;
+    const segment = `    <rect x="${x.toFixed(2)}" y="${barY}" width="${width.toFixed(2)}" height="${barHeight}" fill="${COLORS[language] || COLORS.Other}" clip-path="url(#language-bar)"/>`;
+    x += width;
+    return segment;
+  }).join('\n');
+}
+
+function buildLegend(rows, countedFiles) {
+  const columnWidth = 245;
+  const rowHeight = 40;
+
+  return rows.map(([language, count], index) => {
+    const column = index % 3;
+    const row = Math.floor(index / 3);
+    const x = 24 + column * columnWidth;
+    const y = 106 + row * rowHeight;
+    const pct = ((count / countedFiles) * 100).toFixed(1);
+
+    return `    <g transform="translate(${x} ${y})">
+      <circle cx="6" cy="6" r="6" fill="${COLORS[language] || COLORS.Other}"/>
+      <text x="24" y="11" fill="#f0f6fc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="700">${escapeXml(language)}</text>
+      <text x="178" y="11" fill="#8b949e" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18">${pct}%</text>
+    </g>`;
+  }).join('\n');
+}
+
+function buildChart(totals, countedFiles) {
+  const rows = buildRows(totals);
   const date = new Date().toISOString().slice(0, 10);
 
-  let angle = -90;
-  const paths = rows.map(([language, count]) => {
-    const nextAngle = angle + (count / countedFiles) * 360;
-    const path = piePath(215, 215, 125, angle, nextAngle);
-    angle = nextAngle;
-    return `    <path d="${path}" fill="${COLORS[language] || COLORS.Other}"/>`;
-  });
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="250" viewBox="0 0 760 250" role="img" aria-labelledby="title desc">
+  <title id="title">${escapeXml(USERNAME)} language stats</title>
+  <desc id="desc">A horizontal language usage chart generated from extension-based file counts for public repositories, including forks.</desc>
+  <defs>
+    <clipPath id="language-bar">
+      <rect x="24" y="66" width="712" height="12" rx="6" ry="6"/>
+    </clipPath>
+  </defs>
 
-  const legend = rows.map(([language, count], index) => {
-    const y = 104 + index * 36;
-    const pct = ((count / countedFiles) * 100).toFixed(1);
-    return `    <g transform="translate(430 ${y})">
-      <rect width="14" height="14" rx="3" fill="${COLORS[language] || COLORS.Other}"/>
-      <text x="24" y="13" fill="#c9d1d9">${escapeXml(language)}</text>
-      <text x="230" y="13" fill="#f0f6fc" text-anchor="end" font-weight="700">${pct}%</text>
-    </g>`;
-  });
+  <text x="24" y="38" fill="#f0f6fc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Languages</text>
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
-  <title id="title">${escapeXml(USERNAME)} public repository language file-count pie chart</title>
-  <desc id="desc">A pie chart generated from extension-based file counts for public repositories, including forks.</desc>
-  <rect width="760" height="430" rx="16" fill="#0d1117"/>
-  <text x="32" y="46" fill="#f0f6fc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">Language Mix</text>
-  <text x="32" y="74" fill="#8b949e" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">Public repositories, forks included, extension-based file count, snapshot: ${date}</text>
+  <rect x="24" y="66" width="712" height="12" rx="6" fill="#30363d"/>
+${buildBar(rows, countedFiles)}
 
-  <g stroke="#0d1117" stroke-width="3" stroke-linejoin="round">
-${paths.join('\n')}
+  <g>
+${buildLegend(rows, countedFiles)}
   </g>
 
-  <circle cx="215" cy="215" r="50" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
-  <text x="215" y="209" text-anchor="middle" fill="#f0f6fc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">${countedFiles}</text>
-  <text x="215" y="232" text-anchor="middle" fill="#8b949e" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">files</text>
-
-  <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="15">
-${legend.join('\n')}
-  </g>
+  <rect x="24" y="218" width="4" height="22" fill="#30363d"/>
+  <text x="42" y="235" fill="#8b949e" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16">Generated daily by GitHub Actions · file count · public repos + forks · ${date}</text>
 </svg>
 `;
 }
