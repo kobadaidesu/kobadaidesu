@@ -79,6 +79,7 @@ const IGNORED_EXTENSIONS = new Set([
 
 const IGNORED_PATH_PARTS = new Set([
   '.git', 'node_modules', 'dist', 'build', '.next', '.vercel', 'vendor', '__pycache__',
+  'venv', '.venv', 'env',
 ]);
 
 async function github(path) {
