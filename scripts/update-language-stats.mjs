@@ -168,18 +168,16 @@ function percent(value) {
   return `${(value * 100).toFixed(1)}%`;
 }
 
-function renderSvg(items, total) {
+function renderSvg(items) {
   const width = 520;
   const pad = 24;
   const barX = pad;
-  const barY = 76;
+  const barY = 58;
   const barWidth = width - pad * 2;
   const barHeight = 10;
-  const rowStartY = 116;
+  const rowStartY = 92;
   const rowGap = 30;
-  const footerY = rowStartY + Math.ceil(items.length / 2) * rowGap + 14;
-  const height = footerY + 18;
-  const today = new Date().toISOString().slice(0, 10);
+  const height = rowStartY + Math.ceil(items.length / 2) * rowGap + 10;
 
   let x = barX;
   const segments = items.map((item, index) => {
@@ -204,21 +202,18 @@ function renderSvg(items, total) {
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title desc">
   <title id="title">Most used languages for ${escapeXml(USERNAME)}</title>
-  <desc id="desc">Language usage from public repositories, forks included, based on counted source files.</desc>
+  <desc id="desc">Language usage from public repositories, forks included, based on counted files.</desc>
   <style>
     .card { fill: #0d1117; stroke: #30363d; }
     .title { fill: #58a6ff; font: 600 18px -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; }
-    .sub { fill: #8b949e; font: 400 12px -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; }
     .lang { fill: #c9d1d9; font: 600 14px -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; }
     .pct { fill: #8b949e; font: 400 14px -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; }
   </style>
   <rect class="card" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="6"/>
   <text x="${pad}" y="36" class="title">Most Used Languages</text>
-  <text x="${pad}" y="56" class="sub">${total} source files - public repos - forks included</text>
   <rect x="${barX}" y="${barY}" width="${barWidth}" height="${barHeight}" rx="5" fill="#21262d"/>
   ${segments}
   ${rows}
-  <text x="${pad}" y="${footerY}" class="sub">Updated ${today} - file-count based</text>
 </svg>
 `;
 }
@@ -228,7 +223,7 @@ async function main() {
   const { counts, files } = await countLanguages(repos);
   const items = summarize(counts, files);
   await fs.mkdir('assets', { recursive: true });
-  await fs.writeFile(OUTPUT, renderSvg(items, files));
+  await fs.writeFile(OUTPUT, renderSvg(items));
   console.log(`Wrote ${OUTPUT} from ${files} files across ${repos.length} repositories.`);
 }
 
