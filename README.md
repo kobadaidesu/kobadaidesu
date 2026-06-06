@@ -1,3 +1,3 @@
 <p align="center">
-  <img alt="Language mix pie chart" src="./assets/language-pie.svg" />
+  <img alt="Language stats" src="./assets/language-stats.svg" />
 </p>
