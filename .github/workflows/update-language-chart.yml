@@ -5,9 +5,7 @@ on:
     branches:
       - main
     paths:
-      - scripts/update-language-chart.mjs
       - .github/workflows/update-language-chart.yml
-      - assets/language-stats.svg
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
@@ -23,31 +21,20 @@ jobs:
   update-language-chart:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Generate language metrics
+        uses: lowlighter/metrics@latest
         with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-
-      - name: Generate language chart
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: kobadaidesu
-        run: node scripts/update-language-chart.mjs
-
-      - name: Commit chart update
-        run: |
-          if [ -z "$(git status --porcelain -- assets/language-stats.svg)" ]; then
-            echo "No language chart changes."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/language-stats.svg
-          git commit -m "Update language chart"
-          git pull --rebase origin main
-          git push
+          token: ${{ secrets.METRICS_TOKEN || github.token }}
+          user: kobadaidesu
+          filename: assets/language-stats.svg
+          committer_branch: main
+          committer_message: Update language stats
+          base: ""
+          repositories_forks: yes
+          plugin_languages: yes
+          plugin_languages_sections: most-used
+          plugin_languages_limit: 8
+          plugin_languages_other: yes
+          plugin_languages_details: percentage
+          plugin_languages_colors: github
+          config_timezone: Asia/Tokyo
