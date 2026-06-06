@@ -7,7 +7,7 @@ on:
     paths:
       - scripts/update-language-chart.mjs
       - .github/workflows/update-language-chart.yml
-      - assets/language-pie.svg
+      - assets/language-stats.svg
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
@@ -35,12 +35,12 @@ jobs:
 
       - name: Commit chart update
         run: |
-          if git diff --quiet -- assets/language-pie.svg; then
+          if [ -z "$(git status --porcelain -- assets/language-stats.svg)" ]; then
             echo "No language chart changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/language-pie.svg
+          git add assets/language-stats.svg
           git commit -m "Update language chart"
           git push
