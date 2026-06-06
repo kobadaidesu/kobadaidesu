@@ -10,15 +10,15 @@
   <text x="24" y="38" fill="#f0f6fc" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Languages</text>
 
   <rect x="24" y="66" width="712" height="12" rx="6" fill="#30363d"/>
-  <rect x="24.00" y="66" width="177.58" height="12" fill="#555555" clip-path="url(#language-bar)"/>
-  <rect x="201.58" y="66" width="162.50" height="12" fill="#da5b0b" clip-path="url(#language-bar)"/>
-  <rect x="364.08" y="66" width="122.30" height="12" fill="#3178c6" clip-path="url(#language-bar)"/>
-  <rect x="486.38" y="66" width="72.04" height="12" fill="#e34c26" clip-path="url(#language-bar)"/>
-  <rect x="558.42" y="66" width="68.69" height="12" fill="#3572A5" clip-path="url(#language-bar)"/>
-  <rect x="627.11" y="66" width="18.43" height="12" fill="#563d7c" clip-path="url(#language-bar)"/>
-  <rect x="645.53" y="66" width="15.08" height="12" fill="#f1e05a" clip-path="url(#language-bar)"/>
-  <rect x="660.61" y="66" width="15.08" height="12" fill="#6E4C13" clip-path="url(#language-bar)"/>
-  <rect x="675.69" y="66" width="60.31" height="12" fill="#8b949e" clip-path="url(#language-bar)"/>
+    <rect x="24.00" y="66" width="177.58" height="12" fill="#555555" clip-path="url(#language-bar)"/>
+    <rect x="201.58" y="66" width="162.50" height="12" fill="#da5b0b" clip-path="url(#language-bar)"/>
+    <rect x="364.08" y="66" width="122.30" height="12" fill="#3178c6" clip-path="url(#language-bar)"/>
+    <rect x="486.38" y="66" width="72.04" height="12" fill="#e34c26" clip-path="url(#language-bar)"/>
+    <rect x="558.42" y="66" width="68.69" height="12" fill="#3572A5" clip-path="url(#language-bar)"/>
+    <rect x="627.11" y="66" width="18.43" height="12" fill="#563d7c" clip-path="url(#language-bar)"/>
+    <rect x="645.53" y="66" width="15.08" height="12" fill="#f1e05a" clip-path="url(#language-bar)"/>
+    <rect x="660.61" y="66" width="15.08" height="12" fill="#6E4C13" clip-path="url(#language-bar)"/>
+    <rect x="675.69" y="66" width="60.31" height="12" fill="#8b949e" clip-path="url(#language-bar)"/>
 
   <g>
     <g transform="translate(24 106)">
