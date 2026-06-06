@@ -18,6 +18,7 @@ const LANGUAGE_BY_EXTENSION = new Map(Object.entries({
   '.js': 'JavaScript',
   '.mjs': 'JavaScript',
   '.cjs': 'JavaScript',
+  '.jsx': 'JavaScript',
   '.s': 'Assembly',
   '.asm': 'Assembly',
   '.java': 'Java',
@@ -38,11 +39,6 @@ const LANGUAGE_BY_EXTENSION = new Map(Object.entries({
   '.vue': 'Vue',
   '.svelte': 'Svelte',
   '.astro': 'Astro',
-  '.jsx': 'JavaScript',
-  '.json': 'JSON',
-  '.yaml': 'YAML',
-  '.yml': 'YAML',
-  '.toml': 'TOML',
   '.sql': 'SQL',
   '.lua': 'Lua',
   '.r': 'R',
@@ -69,9 +65,6 @@ const LANGUAGE_COLORS = {
   Vue: '#41B883',
   Svelte: '#FF3E00',
   Astro: '#FF5D01',
-  JSON: '#292929',
-  YAML: '#CB171E',
-  TOML: '#9C4221',
   SQL: '#E38C00',
   Lua: '#000080',
   R: '#198CE7',
@@ -81,6 +74,7 @@ const LANGUAGE_COLORS = {
 const IGNORED_EXTENSIONS = new Set([
   '.md', '.txt', '.pdf', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp',
   '.lock', '.csv', '.tsv', '.zip', '.gz', '.tar', '.mp4', '.mov', '.mp3', '.wav',
+  '.json', '.yaml', '.yml', '.toml',
 ]);
 
 const IGNORED_PATH_PARTS = new Set([
@@ -154,8 +148,7 @@ function summarize(counts, total) {
     .sort((a, b) => b.count - a.count || a.language.localeCompare(b.language));
 
   const shown = sorted.slice(0, MAX_LANGUAGES);
-  const rest = sorted.slice(MAX_LANGUAGES);
-  const otherCount = rest.reduce((sum, item) => sum + item.count, 0);
+  const otherCount = sorted.slice(MAX_LANGUAGES).reduce((sum, item) => sum + item.count, 0);
   if (otherCount > 0) {
     shown.push({ language: 'Other', count: otherCount, share: otherCount / total });
   }
@@ -176,12 +169,15 @@ function percent(value) {
 
 function renderSvg(items, total) {
   const width = 520;
-  const height = 242;
   const pad = 24;
   const barX = pad;
   const barY = 76;
   const barWidth = width - pad * 2;
   const barHeight = 10;
+  const rowStartY = 116;
+  const rowGap = 30;
+  const footerY = rowStartY + Math.ceil(items.length / 2) * rowGap + 14;
+  const height = footerY + 18;
   const today = new Date().toISOString().slice(0, 10);
 
   let x = barX;
@@ -189,8 +185,7 @@ function renderSvg(items, total) {
     const segmentWidth = index === items.length - 1
       ? barX + barWidth - x
       : Math.max(2, Math.round(barWidth * item.share));
-    const rx = index === 0 ? 5 : 0;
-    const piece = `<rect x="${x}" y="${barY}" width="${segmentWidth}" height="${barHeight}" rx="${rx}" fill="${LANGUAGE_COLORS[item.language] || LANGUAGE_COLORS.Other}"/>`;
+    const piece = `<rect x="${x}" y="${barY}" width="${segmentWidth}" height="${barHeight}" rx="${index === 0 ? 5 : 0}" fill="${LANGUAGE_COLORS[item.language] || LANGUAGE_COLORS.Other}"/>`;
     x += segmentWidth;
     return piece;
   }).join('\n    ');
@@ -199,7 +194,7 @@ function renderSvg(items, total) {
     const col = index % 2;
     const row = Math.floor(index / 2);
     const rowX = pad + col * 246;
-    const rowY = 116 + row * 30;
+    const rowY = rowStartY + row * rowGap;
     return `
     <circle cx="${rowX + 6}" cy="${rowY - 5}" r="5" fill="${LANGUAGE_COLORS[item.language] || LANGUAGE_COLORS.Other}"/>
     <text x="${rowX + 20}" y="${rowY}" class="lang">${escapeXml(item.language)}</text>
@@ -216,13 +211,13 @@ function renderSvg(items, total) {
     .lang { fill: #c9d1d9; font: 600 14px -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; }
     .pct { fill: #8b949e; font: 400 14px -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif; }
   </style>
-  <rect class="card" x="0.5" y="0.5" width="519" height="241" rx="6"/>
+  <rect class="card" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="6"/>
   <text x="${pad}" y="36" class="title">Most Used Languages</text>
-  <text x="${pad}" y="56" class="sub">${total} source files · public repos · forks included</text>
+  <text x="${pad}" y="56" class="sub">${total} source files - public repos - forks included</text>
   <rect x="${barX}" y="${barY}" width="${barWidth}" height="${barHeight}" rx="5" fill="#21262d"/>
   ${segments}
   ${rows}
-  <text x="${pad}" y="224" class="sub">Updated ${today} · file-count based</text>
+  <text x="${pad}" y="${footerY}" class="sub">Updated ${today} - file-count based</text>
 </svg>
 `;
 }
