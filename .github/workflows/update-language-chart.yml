@@ -1,6 +1,13 @@
 name: Update Language Chart
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - scripts/update-language-chart.mjs
+      - .github/workflows/update-language-chart.yml
+      - assets/language-pie.svg
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
