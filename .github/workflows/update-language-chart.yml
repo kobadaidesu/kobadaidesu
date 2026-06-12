@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - scripts/update-language-stats.mjs
+      - scripts/update-language-stats.ts
       - .github/workflows/update-language-chart.yml
   schedule:
     - cron: '0 0 * * *'
@@ -34,7 +34,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_USERNAME: kobadaidesu
-        run: node scripts/update-language-stats.mjs
+        run: node scripts/update-language-stats.ts
 
       - name: Commit chart update
         run: |

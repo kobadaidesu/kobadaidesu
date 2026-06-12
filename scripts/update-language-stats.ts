@@ -1,11 +1,33 @@
 import fs from 'node:fs/promises';
 
+type GitHubRepo = {
+  archived: boolean;
+  default_branch: string;
+  disabled: boolean;
+  full_name: string;
+};
+
+type GitHubTreeItem = {
+  path: string;
+  type: string;
+};
+
+type GitHubTreeResponse = {
+  tree?: GitHubTreeItem[];
+};
+
+type LanguageSummary = {
+  language: string;
+  count: number;
+  share: number;
+};
+
 const USERNAME = process.env.GITHUB_USERNAME || 'kobadaidesu';
 const TOKEN = process.env.GITHUB_TOKEN || '';
 const OUTPUT = 'assets/language-stats.svg';
 const MAX_LANGUAGES = 8;
 
-const LANGUAGE_BY_EXTENSION = new Map(Object.entries({
+const LANGUAGE_BY_EXTENSION = new Map<string, string>(Object.entries({
   '.c': 'C',
   '.h': 'C',
   '.ipynb': 'Jupyter Notebook',
@@ -44,7 +66,7 @@ const LANGUAGE_BY_EXTENSION = new Map(Object.entries({
   '.r': 'R',
 }));
 
-const LANGUAGE_COLORS = {
+const LANGUAGE_COLORS: Record<string, string> = {
   C: '#555555',
   'Jupyter Notebook': '#DA5B0B',
   TypeScript: '#3178C6',
@@ -71,18 +93,18 @@ const LANGUAGE_COLORS = {
   Other: '#8B949E',
 };
 
-const IGNORED_EXTENSIONS = new Set([
+const IGNORED_EXTENSIONS = new Set<string>([
   '.md', '.txt', '.pdf', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.webp',
   '.lock', '.csv', '.tsv', '.zip', '.gz', '.tar', '.mp4', '.mov', '.mp3', '.wav',
   '.json', '.yaml', '.yml', '.toml',
 ]);
 
-const IGNORED_PATH_PARTS = new Set([
+const IGNORED_PATH_PARTS = new Set<string>([
   '.git', 'node_modules', 'dist', 'build', '.next', '.vercel', 'vendor', '__pycache__',
   'venv', '.venv', 'env',
 ]);
 
-async function github(path) {
+async function github<T>(path: string): Promise<T> {
   const response = await fetch(`https://api.github.com${path}`, {
     headers: {
       Accept: 'application/vnd.github+json',
@@ -93,41 +115,41 @@ async function github(path) {
   if (!response.ok) {
     throw new Error(`${response.status} ${response.statusText}: ${path}`);
   }
-  return response.json();
+  return response.json() as Promise<T>;
 }
 
-async function listRepos() {
-  const repos = [];
+async function listRepos(): Promise<GitHubRepo[]> {
+  const repos: GitHubRepo[] = [];
   for (let page = 1; ; page += 1) {
-    const batch = await github(`/users/${USERNAME}/repos?per_page=100&page=${page}&type=owner&sort=full_name`);
+    const batch = await github<GitHubRepo[]>(`/users/${USERNAME}/repos?per_page=100&page=${page}&type=owner&sort=full_name`);
     repos.push(...batch.filter((repo) => !repo.archived && !repo.disabled));
     if (batch.length < 100) break;
   }
   return repos;
 }
 
-function extensionOf(path) {
+function extensionOf(path: string): string {
   const basename = path.split('/').pop() || '';
   const index = basename.lastIndexOf('.');
   return index > 0 ? basename.slice(index).toLowerCase() : '';
 }
 
-function shouldSkip(path) {
+function shouldSkip(path: string): boolean {
   const parts = path.split('/');
   if (parts.some((part) => IGNORED_PATH_PARTS.has(part))) return true;
   return IGNORED_EXTENSIONS.has(extensionOf(path));
 }
 
-async function countLanguages(repos) {
-  const counts = new Map();
+async function countLanguages(repos: GitHubRepo[]): Promise<{ counts: Map<string, number>; files: number }> {
+  const counts = new Map<string, number>();
   let files = 0;
 
   for (const repo of repos) {
-    let tree;
+    let tree: GitHubTreeResponse;
     try {
-      tree = await github(`/repos/${repo.full_name}/git/trees/${encodeURIComponent(repo.default_branch)}?recursive=1`);
+      tree = await github<GitHubTreeResponse>(`/repos/${repo.full_name}/git/trees/${encodeURIComponent(repo.default_branch)}?recursive=1`);
     } catch (error) {
-      console.warn(`Skipping ${repo.full_name}: ${error.message}`);
+      console.warn(`Skipping ${repo.full_name}: ${(error as Error).message}`);
       continue;
     }
 
@@ -143,7 +165,7 @@ async function countLanguages(repos) {
   return { counts, files };
 }
 
-function summarize(counts, total) {
+function summarize(counts: Map<string, number>, total: number): LanguageSummary[] {
   const sorted = [...counts.entries()]
     .map(([language, count]) => ({ language, count, share: count / total }))
     .sort((a, b) => b.count - a.count || a.language.localeCompare(b.language));
@@ -156,7 +178,7 @@ function summarize(counts, total) {
   return shown;
 }
 
-function escapeXml(value) {
+function escapeXml(value: string): string {
   return String(value)
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
@@ -164,11 +186,15 @@ function escapeXml(value) {
     .replaceAll('"', '&quot;');
 }
 
-function percent(value) {
+function percent(value: number): string {
   return `${(value * 100).toFixed(1)}%`;
 }
 
-function renderSvg(items) {
+function languageColor(language: string): string {
+  return LANGUAGE_COLORS[language] || LANGUAGE_COLORS.Other;
+}
+
+function renderSvg(items: LanguageSummary[]): string {
   const width = 520;
   const pad = 24;
   const barX = pad;
@@ -184,7 +210,7 @@ function renderSvg(items) {
     const segmentWidth = index === items.length - 1
       ? barX + barWidth - x
       : Math.max(2, Math.round(barWidth * item.share));
-    const piece = `<rect x="${x}" y="${barY}" width="${segmentWidth}" height="${barHeight}" rx="${index === 0 ? 5 : 0}" fill="${LANGUAGE_COLORS[item.language] || LANGUAGE_COLORS.Other}"/>`;
+    const piece = `<rect x="${x}" y="${barY}" width="${segmentWidth}" height="${barHeight}" rx="${index === 0 ? 5 : 0}" fill="${languageColor(item.language)}"/>`;
     x += segmentWidth;
     return piece;
   }).join('\n    ');
@@ -195,7 +221,7 @@ function renderSvg(items) {
     const rowX = pad + col * 246;
     const rowY = rowStartY + row * rowGap;
     return `
-    <circle cx="${rowX + 6}" cy="${rowY - 5}" r="5" fill="${LANGUAGE_COLORS[item.language] || LANGUAGE_COLORS.Other}"/>
+    <circle cx="${rowX + 6}" cy="${rowY - 5}" r="5" fill="${languageColor(item.language)}"/>
     <text x="${rowX + 20}" y="${rowY}" class="lang">${escapeXml(item.language)}</text>
     <text x="${rowX + 160}" y="${rowY}" class="pct">${percent(item.share)}</text>`;
   }).join('\n');
@@ -218,7 +244,7 @@ function renderSvg(items) {
 `;
 }
 
-async function main() {
+async function main(): Promise<void> {
   const repos = await listRepos();
   const { counts, files } = await countLanguages(repos);
   const items = summarize(counts, files);
@@ -227,7 +253,7 @@ async function main() {
   console.log(`Wrote ${OUTPUT} from ${files} files across ${repos.length} repositories.`);
 }
 
-main().catch((error) => {
+main().catch((error: unknown) => {
   console.error(error);
   process.exit(1);
 });
