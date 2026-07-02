@@ -22,11 +22,11 @@
   
     <circle cx="30" cy="87" r="5" fill="#555555"/>
     <text x="44" y="92" class="lang">C</text>
-    <text x="184" y="92" class="pct">38.0%</text>
+    <text x="184" y="92" class="pct">37.9%</text>
 
     <circle cx="276" cy="87" r="5" fill="#DA5B0B"/>
     <text x="290" y="92" class="lang">Jupyter Notebook</text>
-    <text x="430" y="92" class="pct">17.1%</text>
+    <text x="430" y="92" class="pct">17.2%</text>
 
     <circle cx="30" cy="117" r="5" fill="#3572A5"/>
     <text x="44" y="122" class="lang">Python</text>
@@ -34,7 +34,7 @@
 
     <circle cx="276" cy="117" r="5" fill="#3178C6"/>
     <text x="290" y="122" class="lang">TypeScript</text>
-    <text x="430" y="122" class="pct">13.4%</text>
+    <text x="430" y="122" class="pct">13.5%</text>
 
     <circle cx="30" cy="147" r="5" fill="#E34C26"/>
     <text x="44" y="152" class="lang">HTML</text>
