@@ -15,14 +15,14 @@
     <rect x="268" y="58" width="70" height="10" rx="0" fill="#3572A5"/>
     <rect x="338" y="58" width="60" height="10" rx="0" fill="#3178C6"/>
     <rect x="398" y="58" width="31" height="10" rx="0" fill="#E34C26"/>
-    <rect x="429" y="58" width="21" height="10" rx="0" fill="#F05138"/>
-    <rect x="450" y="58" width="9" height="10" rx="0" fill="#563D7C"/>
-    <rect x="459" y="58" width="8" height="10" rx="0" fill="#89E051"/>
-    <rect x="467" y="58" width="29" height="10" rx="0" fill="#8B949E"/>
+    <rect x="429" y="58" width="22" height="10" rx="0" fill="#F05138"/>
+    <rect x="451" y="58" width="9" height="10" rx="0" fill="#563D7C"/>
+    <rect x="460" y="58" width="8" height="10" rx="0" fill="#89E051"/>
+    <rect x="468" y="58" width="28" height="10" rx="0" fill="#8B949E"/>
   
     <circle cx="30" cy="87" r="5" fill="#555555"/>
     <text x="44" y="92" class="lang">C</text>
-    <text x="184" y="92" class="pct">35.6%</text>
+    <text x="184" y="92" class="pct">35.5%</text>
 
     <circle cx="276" cy="87" r="5" fill="#DA5B0B"/>
     <text x="290" y="92" class="lang">Jupyter Notebook</text>
@@ -38,11 +38,11 @@
 
     <circle cx="30" cy="147" r="5" fill="#E34C26"/>
     <text x="44" y="152" class="lang">HTML</text>
-    <text x="184" y="152" class="pct">6.7%</text>
+    <text x="184" y="152" class="pct">6.6%</text>
 
     <circle cx="276" cy="147" r="5" fill="#F05138"/>
     <text x="290" y="152" class="lang">Swift</text>
-    <text x="430" y="152" class="pct">4.5%</text>
+    <text x="430" y="152" class="pct">4.7%</text>
 
     <circle cx="30" cy="177" r="5" fill="#563D7C"/>
     <text x="44" y="182" class="lang">CSS</text>
