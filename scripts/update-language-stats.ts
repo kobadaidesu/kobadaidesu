@@ -64,6 +64,7 @@ const LANGUAGE_BY_EXTENSION = new Map<string, string>(Object.entries({
   '.sql': 'SQL',
   '.lua': 'Lua',
   '.r': 'R',
+  '.nix': 'Nix',
 }));
 
 const LANGUAGE_COLORS: Record<string, string> = {
@@ -90,6 +91,7 @@ const LANGUAGE_COLORS: Record<string, string> = {
   SQL: '#E38C00',
   Lua: '#000080',
   R: '#198CE7',
+  Nix: '#5277C3',
   Other: '#8B949E',
 };
 
