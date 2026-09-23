@@ -10,19 +10,19 @@
   <rect class="card" x="0.5" y="0.5" width="519" height="251" rx="6"/>
   <text x="24" y="36" class="title">Most Used Languages</text>
   <rect x="24" y="58" width="472" height="10" rx="5" fill="#21262d"/>
-  <rect x="24" y="58" width="151" height="10" rx="5" fill="#3572A5"/>
-    <rect x="175" y="58" width="128" height="10" rx="0" fill="#DEA584"/>
-    <rect x="303" y="58" width="50" height="10" rx="0" fill="#555555"/>
-    <rect x="353" y="58" width="43" height="10" rx="0" fill="#3178C6"/>
-    <rect x="396" y="58" width="33" height="10" rx="0" fill="#F1E05A"/>
-    <rect x="429" y="58" width="14" height="10" rx="0" fill="#DA5B0B"/>
-    <rect x="443" y="58" width="12" height="10" rx="0" fill="#E34C26"/>
-    <rect x="455" y="58" width="12" height="10" rx="0" fill="#00ADD8"/>
-    <rect x="467" y="58" width="29" height="10" rx="0" fill="#8B949E"/>
+  <rect x="24" y="58" width="150" height="10" rx="5" fill="#3572A5"/>
+    <rect x="174" y="58" width="128" height="10" rx="0" fill="#DEA584"/>
+    <rect x="302" y="58" width="50" height="10" rx="0" fill="#555555"/>
+    <rect x="352" y="58" width="43" height="10" rx="0" fill="#3178C6"/>
+    <rect x="395" y="58" width="33" height="10" rx="0" fill="#F1E05A"/>
+    <rect x="428" y="58" width="14" height="10" rx="0" fill="#DA5B0B"/>
+    <rect x="442" y="58" width="12" height="10" rx="0" fill="#E34C26"/>
+    <rect x="454" y="58" width="12" height="10" rx="0" fill="#00ADD8"/>
+    <rect x="466" y="58" width="30" height="10" rx="0" fill="#8B949E"/>
   
     <circle cx="30" cy="87" r="5" fill="#3572A5"/>
     <text x="44" y="92" class="lang">Python</text>
-    <text x="184" y="92" class="pct">31.9%</text>
+    <text x="184" y="92" class="pct">31.8%</text>
 
     <circle cx="276" cy="87" r="5" fill="#DEA584"/>
     <text x="290" y="92" class="lang">Rust</text>
@@ -30,7 +30,7 @@
 
     <circle cx="30" cy="117" r="5" fill="#555555"/>
     <text x="44" y="122" class="lang">C</text>
-    <text x="184" y="122" class="pct">10.5%</text>
+    <text x="184" y="122" class="pct">10.6%</text>
 
     <circle cx="276" cy="117" r="5" fill="#3178C6"/>
     <text x="290" y="122" class="lang">TypeScript</text>
