@@ -26,7 +26,7 @@
 
     <circle cx="276" cy="87" r="5" fill="#DEA584"/>
     <text x="290" y="92" class="lang">Rust</text>
-    <text x="430" y="92" class="pct">26.7%</text>
+    <text x="430" y="92" class="pct">26.6%</text>
 
     <circle cx="30" cy="117" r="5" fill="#555555"/>
     <text x="44" y="122" class="lang">C</text>
