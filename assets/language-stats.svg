@@ -42,7 +42,7 @@
 
     <circle cx="276" cy="147" r="5" fill="#00ADD8"/>
     <text x="290" y="152" class="lang">Go</text>
-    <text x="430" y="152" class="pct">3.3%</text>
+    <text x="430" y="152" class="pct">3.4%</text>
 
     <circle cx="30" cy="177" r="5" fill="#DA5B0B"/>
     <text x="44" y="182" class="lang">Jupyter Notebook</text>
