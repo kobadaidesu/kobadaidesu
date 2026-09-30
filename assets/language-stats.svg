@@ -11,14 +11,14 @@
   <text x="24" y="36" class="title">Most Used Languages</text>
   <rect x="24" y="58" width="472" height="10" rx="5" fill="#21262d"/>
   <rect x="24" y="58" width="150" height="10" rx="5" fill="#3572A5"/>
-    <rect x="174" y="58" width="126" height="10" rx="0" fill="#DEA584"/>
-    <rect x="300" y="58" width="49" height="10" rx="0" fill="#555555"/>
-    <rect x="349" y="58" width="45" height="10" rx="0" fill="#3178C6"/>
-    <rect x="394" y="58" width="33" height="10" rx="0" fill="#F1E05A"/>
-    <rect x="427" y="58" width="16" height="10" rx="0" fill="#00ADD8"/>
-    <rect x="443" y="58" width="13" height="10" rx="0" fill="#DA5B0B"/>
-    <rect x="456" y="58" width="12" height="10" rx="0" fill="#E34C26"/>
-    <rect x="468" y="58" width="28" height="10" rx="0" fill="#8B949E"/>
+    <rect x="174" y="58" width="125" height="10" rx="0" fill="#DEA584"/>
+    <rect x="299" y="58" width="49" height="10" rx="0" fill="#555555"/>
+    <rect x="348" y="58" width="45" height="10" rx="0" fill="#3178C6"/>
+    <rect x="393" y="58" width="33" height="10" rx="0" fill="#F1E05A"/>
+    <rect x="426" y="58" width="16" height="10" rx="0" fill="#00ADD8"/>
+    <rect x="442" y="58" width="13" height="10" rx="0" fill="#DA5B0B"/>
+    <rect x="455" y="58" width="12" height="10" rx="0" fill="#E34C26"/>
+    <rect x="467" y="58" width="29" height="10" rx="0" fill="#8B949E"/>
   
     <circle cx="30" cy="87" r="5" fill="#3572A5"/>
     <text x="44" y="92" class="lang">Python</text>
@@ -30,11 +30,11 @@
 
     <circle cx="30" cy="117" r="5" fill="#555555"/>
     <text x="44" y="122" class="lang">C</text>
-    <text x="184" y="122" class="pct">10.4%</text>
+    <text x="184" y="122" class="pct">10.3%</text>
 
     <circle cx="276" cy="117" r="5" fill="#3178C6"/>
     <text x="290" y="122" class="lang">TypeScript</text>
-    <text x="430" y="122" class="pct">9.5%</text>
+    <text x="430" y="122" class="pct">9.6%</text>
 
     <circle cx="30" cy="147" r="5" fill="#F1E05A"/>
     <text x="44" y="152" class="lang">JavaScript</text>
