@@ -10,39 +10,39 @@
   <rect class="card" x="0.5" y="0.5" width="519" height="251" rx="6"/>
   <text x="24" y="36" class="title">Most Used Languages</text>
   <rect x="24" y="58" width="472" height="10" rx="5" fill="#21262d"/>
-  <rect x="24" y="58" width="150" height="10" rx="5" fill="#3572A5"/>
-    <rect x="174" y="58" width="125" height="10" rx="0" fill="#DEA584"/>
-    <rect x="299" y="58" width="49" height="10" rx="0" fill="#555555"/>
-    <rect x="348" y="58" width="45" height="10" rx="0" fill="#3178C6"/>
-    <rect x="393" y="58" width="33" height="10" rx="0" fill="#F1E05A"/>
-    <rect x="426" y="58" width="16" height="10" rx="0" fill="#00ADD8"/>
-    <rect x="442" y="58" width="13" height="10" rx="0" fill="#DA5B0B"/>
-    <rect x="455" y="58" width="12" height="10" rx="0" fill="#E34C26"/>
-    <rect x="467" y="58" width="29" height="10" rx="0" fill="#8B949E"/>
+  <rect x="24" y="58" width="151" height="10" rx="5" fill="#3572A5"/>
+    <rect x="175" y="58" width="122" height="10" rx="0" fill="#DEA584"/>
+    <rect x="297" y="58" width="51" height="10" rx="0" fill="#3178C6"/>
+    <rect x="348" y="58" width="48" height="10" rx="0" fill="#555555"/>
+    <rect x="396" y="58" width="32" height="10" rx="0" fill="#F1E05A"/>
+    <rect x="428" y="58" width="16" height="10" rx="0" fill="#00ADD8"/>
+    <rect x="444" y="58" width="13" height="10" rx="0" fill="#DA5B0B"/>
+    <rect x="457" y="58" width="12" height="10" rx="0" fill="#E34C26"/>
+    <rect x="469" y="58" width="27" height="10" rx="0" fill="#8B949E"/>
   
     <circle cx="30" cy="87" r="5" fill="#3572A5"/>
     <text x="44" y="92" class="lang">Python</text>
-    <text x="184" y="92" class="pct">31.8%</text>
+    <text x="184" y="92" class="pct">31.9%</text>
 
     <circle cx="276" cy="87" r="5" fill="#DEA584"/>
     <text x="290" y="92" class="lang">Rust</text>
-    <text x="430" y="92" class="pct">26.6%</text>
+    <text x="430" y="92" class="pct">25.9%</text>
 
-    <circle cx="30" cy="117" r="5" fill="#555555"/>
-    <text x="44" y="122" class="lang">C</text>
-    <text x="184" y="122" class="pct">10.3%</text>
+    <circle cx="30" cy="117" r="5" fill="#3178C6"/>
+    <text x="44" y="122" class="lang">TypeScript</text>
+    <text x="184" y="122" class="pct">10.7%</text>
 
-    <circle cx="276" cy="117" r="5" fill="#3178C6"/>
-    <text x="290" y="122" class="lang">TypeScript</text>
-    <text x="430" y="122" class="pct">9.6%</text>
+    <circle cx="276" cy="117" r="5" fill="#555555"/>
+    <text x="290" y="122" class="lang">C</text>
+    <text x="430" y="122" class="pct">10.1%</text>
 
     <circle cx="30" cy="147" r="5" fill="#F1E05A"/>
     <text x="44" y="152" class="lang">JavaScript</text>
-    <text x="184" y="152" class="pct">6.9%</text>
+    <text x="184" y="152" class="pct">6.7%</text>
 
     <circle cx="276" cy="147" r="5" fill="#00ADD8"/>
     <text x="290" y="152" class="lang">Go</text>
-    <text x="430" y="152" class="pct">3.4%</text>
+    <text x="430" y="152" class="pct">3.3%</text>
 
     <circle cx="30" cy="177" r="5" fill="#DA5B0B"/>
     <text x="44" y="182" class="lang">Jupyter Notebook</text>
@@ -54,5 +54,5 @@
 
     <circle cx="30" cy="207" r="5" fill="#8B949E"/>
     <text x="44" y="212" class="lang">Other</text>
-    <text x="184" y="212" class="pct">5.9%</text>
+    <text x="184" y="212" class="pct">6.0%</text>
 </svg>
