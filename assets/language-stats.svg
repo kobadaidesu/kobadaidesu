@@ -10,15 +10,15 @@
   <rect class="card" x="0.5" y="0.5" width="519" height="251" rx="6"/>
   <text x="24" y="36" class="title">Most Used Languages</text>
   <rect x="24" y="58" width="472" height="10" rx="5" fill="#21262d"/>
-  <rect x="24" y="58" width="141" height="10" rx="5" fill="#3572A5"/>
-    <rect x="165" y="58" width="114" height="10" rx="0" fill="#DEA584"/>
+  <rect x="24" y="58" width="142" height="10" rx="5" fill="#3572A5"/>
+    <rect x="166" y="58" width="113" height="10" rx="0" fill="#DEA584"/>
     <rect x="279" y="58" width="58" height="10" rx="0" fill="#3178C6"/>
     <rect x="337" y="58" width="44" height="10" rx="0" fill="#555555"/>
     <rect x="381" y="58" width="30" height="10" rx="0" fill="#F1E05A"/>
-    <rect x="411" y="58" width="15" height="10" rx="0" fill="#00ADD8"/>
-    <rect x="426" y="58" width="14" height="10" rx="0" fill="#F05138"/>
-    <rect x="440" y="58" width="13" height="10" rx="0" fill="#DA5B0B"/>
-    <rect x="453" y="58" width="43" height="10" rx="0" fill="#8B949E"/>
+    <rect x="411" y="58" width="17" height="10" rx="0" fill="#F05138"/>
+    <rect x="428" y="58" width="15" height="10" rx="0" fill="#00ADD8"/>
+    <rect x="443" y="58" width="13" height="10" rx="0" fill="#DA5B0B"/>
+    <rect x="456" y="58" width="40" height="10" rx="0" fill="#8B949E"/>
   
     <circle cx="30" cy="87" r="5" fill="#3572A5"/>
     <text x="44" y="92" class="lang">Python</text>
@@ -26,33 +26,33 @@
 
     <circle cx="276" cy="87" r="5" fill="#DEA584"/>
     <text x="290" y="92" class="lang">Rust</text>
-    <text x="430" y="92" class="pct">24.2%</text>
+    <text x="430" y="92" class="pct">23.9%</text>
 
     <circle cx="30" cy="117" r="5" fill="#3178C6"/>
     <text x="44" y="122" class="lang">TypeScript</text>
-    <text x="184" y="122" class="pct">12.3%</text>
+    <text x="184" y="122" class="pct">12.2%</text>
 
     <circle cx="276" cy="117" r="5" fill="#555555"/>
     <text x="290" y="122" class="lang">C</text>
-    <text x="430" y="122" class="pct">9.3%</text>
+    <text x="430" y="122" class="pct">9.2%</text>
 
     <circle cx="30" cy="147" r="5" fill="#F1E05A"/>
     <text x="44" y="152" class="lang">JavaScript</text>
     <text x="184" y="152" class="pct">6.3%</text>
 
-    <circle cx="276" cy="147" r="5" fill="#00ADD8"/>
-    <text x="290" y="152" class="lang">Go</text>
-    <text x="430" y="152" class="pct">3.2%</text>
+    <circle cx="276" cy="147" r="5" fill="#F05138"/>
+    <text x="290" y="152" class="lang">Swift</text>
+    <text x="430" y="152" class="pct">3.6%</text>
 
-    <circle cx="30" cy="177" r="5" fill="#F05138"/>
-    <text x="44" y="182" class="lang">Swift</text>
-    <text x="184" y="182" class="pct">3.0%</text>
+    <circle cx="30" cy="177" r="5" fill="#00ADD8"/>
+    <text x="44" y="182" class="lang">Go</text>
+    <text x="184" y="182" class="pct">3.2%</text>
 
     <circle cx="276" cy="177" r="5" fill="#DA5B0B"/>
     <text x="290" y="182" class="lang">Jupyter Notebook</text>
-    <text x="430" y="182" class="pct">2.9%</text>
+    <text x="430" y="182" class="pct">2.8%</text>
 
     <circle cx="30" cy="207" r="5" fill="#8B949E"/>
     <text x="44" y="212" class="lang">Other</text>
-    <text x="184" y="212" class="pct">8.8%</text>
+    <text x="184" y="212" class="pct">8.7%</text>
 </svg>
