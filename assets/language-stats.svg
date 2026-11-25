@@ -26,11 +26,11 @@
 
     <circle cx="276" cy="87" r="5" fill="#DEA584"/>
     <text x="290" y="92" class="lang">Rust</text>
-    <text x="430" y="92" class="pct">23.1%</text>
+    <text x="430" y="92" class="pct">23.0%</text>
 
     <circle cx="30" cy="117" r="5" fill="#3178C6"/>
     <text x="44" y="122" class="lang">TypeScript</text>
-    <text x="184" y="122" class="pct">12.5%</text>
+    <text x="184" y="122" class="pct">12.4%</text>
 
     <circle cx="276" cy="117" r="5" fill="#555555"/>
     <text x="290" y="122" class="lang">C</text>
@@ -46,7 +46,7 @@
 
     <circle cx="30" cy="177" r="5" fill="#00ADD8"/>
     <text x="44" y="182" class="lang">Go</text>
-    <text x="184" y="182" class="pct">4.2%</text>
+    <text x="184" y="182" class="pct">4.3%</text>
 
     <circle cx="276" cy="177" r="5" fill="#DA5B0B"/>
     <text x="290" y="182" class="lang">Jupyter Notebook</text>
@@ -54,5 +54,5 @@
 
     <circle cx="30" cy="207" r="5" fill="#8B949E"/>
     <text x="44" y="212" class="lang">Other</text>
-    <text x="184" y="212" class="pct">8.6%</text>
+    <text x="184" y="212" class="pct">8.5%</text>
 </svg>
