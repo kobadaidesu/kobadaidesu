@@ -16,9 +16,9 @@
     <rect x="326" y="58" width="41" height="10" rx="0" fill="#555555"/>
     <rect x="367" y="58" width="28" height="10" rx="0" fill="#F1E05A"/>
     <rect x="395" y="58" width="28" height="10" rx="0" fill="#F05138"/>
-    <rect x="423" y="58" width="20" height="10" rx="0" fill="#00ADD8"/>
-    <rect x="443" y="58" width="12" height="10" rx="0" fill="#DA5B0B"/>
-    <rect x="455" y="58" width="41" height="10" rx="0" fill="#8B949E"/>
+    <rect x="423" y="58" width="21" height="10" rx="0" fill="#00ADD8"/>
+    <rect x="444" y="58" width="12" height="10" rx="0" fill="#DA5B0B"/>
+    <rect x="456" y="58" width="40" height="10" rx="0" fill="#8B949E"/>
   
     <circle cx="30" cy="87" r="5" fill="#3572A5"/>
     <text x="44" y="92" class="lang">Python</text>
@@ -46,7 +46,7 @@
 
     <circle cx="30" cy="177" r="5" fill="#00ADD8"/>
     <text x="44" y="182" class="lang">Go</text>
-    <text x="184" y="182" class="pct">4.3%</text>
+    <text x="184" y="182" class="pct">4.4%</text>
 
     <circle cx="276" cy="177" r="5" fill="#DA5B0B"/>
     <text x="290" y="182" class="lang">Jupyter Notebook</text>
